@@ -1,0 +1,44 @@
+:root {
+  /* fonts */
+  --primary-font: "Poppins", sans-serif;
+  --secondary-font: "Roboto Mono", monospace;
+
+  /* colors */
+  --very-dark-grey: #1c1b21;
+  --dark-grey-purple: #232329;
+  --dark-grey: #302f38;
+  --grey: #737b88;
+  --neutral: #c8d3d5;
+  --blood-orange: #bd463e;
+  --bright-orange: #d96d3f;
+  --deep-purple: #493751;
+  --purple: #70439b;
+  --lavender: #5a4a78;
+  --faded-blue: #599bbc;
+  --faded-pink: #b15760;
+
+  //dimensional parameters
+  --header-height: 70px;
+  --card-border-radius: 5px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("cards.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: var(--very-dark-grey);
+  width: 100%;
+  font-family: var(--primary-font);
+  color: var(--neutral);
+}
