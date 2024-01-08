@@ -2,8 +2,8 @@ import allProjects from "../../../util/all-projects";
 
 import { useState } from "react";
 
-import leftArrow from "../../../../public/left-arrow.svg";
-import rightArrow from "../../../../public/right-arrow.svg";
+import leftArrow from "../../../assets/left-arrow.svg";
+import rightArrow from "../../../assets/right-arrow.svg";
 
 import classes from "./ProjectsScroll.module.scss";
 

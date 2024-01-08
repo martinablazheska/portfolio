@@ -21,7 +21,7 @@ const skills: skillType[] = [
     id: 2,
     name: "JavaScript",
     description:
-      "Skill set defined by a comprehensive command of Vanilla JavaScript, facilitating the development of dynamic and interactive user interfaces. Proficiency in tasks such as DOM manipulation, event handling, and asynchronous programming.",
+      "Skillset defined by a comprehensive command of Vanilla JavaScript, facilitating the development of dynamic and interactive user interfaces. Proficiency in tasks such as DOM manipulation, event handling, and asynchronous programming.",
     imgSrc: "javascript-logo.svg",
     imgAlt: "JavaScript logo",
     highlightColor: "#D96D3F",
