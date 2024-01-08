@@ -1,5 +1,6 @@
 .project-card {
-  width: 95%;
+  width: calc(100% - 70px);
+  height: 480px;
   min-width: 300px;
   box-sizing: border-box;
   padding-bottom: 10px;
@@ -64,9 +65,15 @@
   }
 }
 
-@media (min-width: 430px) {
+@media (min-width: 470px) {
   .project-card {
     width: 400px;
     min-width: none;
+  }
+}
+
+@media (min-width: 830px) {
+  .project-card {
+    height: auto;
   }
 }

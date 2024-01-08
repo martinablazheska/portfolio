@@ -13,7 +13,7 @@ const skills: skillType[] = [
     name: "HTML, CSS & SCSS",
     description:
       "Proficiency in HTML for creating structured and accessible content. Translating concepts into visually appealing and responsive designs using CSS. Leveraging the power of SCSS for modular, maintainable, and efficient stylesheets, contributing to seamless and modern web development.",
-    imgSrc: "/browser-icon.svg",
+    imgSrc: "browser-icon.svg",
     imgAlt: "HTML, CSS & SCSS icon",
     highlightColor: "#B15760",
   },
@@ -22,7 +22,7 @@ const skills: skillType[] = [
     name: "JavaScript",
     description:
       "Skill set defined by a comprehensive command of Vanilla JavaScript, facilitating the development of dynamic and interactive user interfaces. Proficiency in tasks such as DOM manipulation, event handling, and asynchronous programming.",
-    imgSrc: "/javascript-logo.svg",
+    imgSrc: "javascript-logo.svg",
     imgAlt: "JavaScript logo",
     highlightColor: "#D96D3F",
   },
@@ -40,7 +40,7 @@ const skills: skillType[] = [
     name: "TypeScript",
     description:
       "Leveraging TypeScript in React development to enhance type safety and scalability of codebases, as well as to benefit from early error detection, improved code maintainability and  developer experience.",
-    imgSrc: "/typescript-logo.svg",
+    imgSrc: "typescript-logo.svg",
     imgAlt: "TypeScript logo",
     highlightColor: "#599bbc",
   },
