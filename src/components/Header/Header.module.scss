@@ -46,7 +46,7 @@
   .menu-button {
     display: none;
   }
-  z-index: 1;
+  z-index: 3;
   img {
     width: 25px;
   }
@@ -92,5 +92,17 @@ button {
 
   .open {
     background-color: transparent;
+  }
+
+  .scrolled {
+    position: fixed;
+    background-color: hsla(250, 10%, 12%, 0.7);
+    z-index: 3;
+    div {
+      color: var(--faded-blue);
+      &:hover {
+        color: #75c8f1;
+      }
+    }
   }
 }

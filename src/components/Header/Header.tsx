@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { scrollContext } from "../../context/scroll-context";
 
 import HeaderLink from "./HeaderLink";
 
@@ -9,6 +10,7 @@ import classes from "./Header.module.scss";
 
 function Header() {
   const [isCollapsed, setIsCollapsed] = useState(true);
+  const { isScrolled, setIsScrolled } = useContext(scrollContext);
 
   function collapseHandler() {
     setIsCollapsed((prevIsCollapsed) => !prevIsCollapsed);
@@ -18,14 +20,27 @@ function Header() {
     setIsCollapsed(true);
   }
 
-  return (
-    <div
-      className={
-        isCollapsed
-          ? `${classes.header} ${classes.closed}`
-          : `${classes.header} ${classes.open}`
+  useEffect(() => {
+    function handleScroll() {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition >= window.innerHeight) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
       }
-    >
+    }
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const headerClasses = `${classes.header} ${
+    isCollapsed ? classes.closed : classes.open
+  } ${isScrolled && classes.scrolled}`;
+
+  return (
+    <div className={headerClasses} id="header">
       <button className={classes["menu-button"]}>
         <img src={openMenu} onClick={collapseHandler} alt="Open navigation" />
       </button>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
 import Introduction from "./Introduction/Introduction";
 import Skills from "./Skills/Skills";
@@ -6,8 +6,11 @@ import Projects from "./Projects/Projects";
 import ProjectsScroll from "./Projects/ProjectsScroll";
 
 import classes from "./Home.module.scss";
+import UpButton from "../UI/UpButton";
+import { scrollContext } from "../../context/scroll-context";
 
 function Home() {
+  const { isScrolled } = useContext(scrollContext);
   const [currentWindowWidth, setCurrentWindowWidth] = useState(
     window.innerWidth
   );
@@ -27,6 +30,7 @@ function Home() {
       ) : (
         <ProjectsScroll id="projects" />
       )}
+      {isScrolled && <UpButton />}
     </div>
   );
 }
