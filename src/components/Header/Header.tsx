@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { scrollContext } from "../../context/scroll-context";
 
 import HeaderLink from "./HeaderLink";
+import { headerLinks } from "../../data/header-links";
 
 import openMenu from "../../assets/hamburger-svgrepo-com.svg";
 import closeMenu from "../../assets/close-very-dark-grey.svg";
@@ -47,11 +48,14 @@ function Header() {
       <button className={classes["close-button"]}>
         <img src={closeMenu} alt="Close navigation" onClick={collapseHandler} />
       </button>
-      <HeaderLink title="home" linkCollapseHandler={linkCollapseHandler} />
-      <HeaderLink title="skills" linkCollapseHandler={linkCollapseHandler} />
-      <HeaderLink title="projects" linkCollapseHandler={linkCollapseHandler} />
-      <HeaderLink title="about" linkCollapseHandler={linkCollapseHandler} />
-      <HeaderLink title="contact" linkCollapseHandler={linkCollapseHandler} />
+      {headerLinks.map((link) => (
+        <HeaderLink
+          key={link.id}
+          title={link.title}
+          scrollTo={link.scrollTo}
+          linkCollapseHandler={linkCollapseHandler}
+        />
+      ))}
     </div>
   );
 }

@@ -2,10 +2,11 @@ import scrollToElement from "../../util/scroll-to-element";
 
 const HeaderLink: React.FC<{
   title: string;
+  scrollTo: string;
   linkCollapseHandler: () => void;
-}> = ({ title, linkCollapseHandler }) => {
+}> = ({ title, scrollTo, linkCollapseHandler }) => {
   function clickHandler() {
-    scrollToElement(title);
+    scrollToElement(scrollTo);
     linkCollapseHandler();
   }
   return <div onClick={clickHandler}>//{title}</div>;
