@@ -8,6 +8,7 @@ import ProjectsScroll from "./Projects/ProjectsScroll";
 import classes from "./Home.module.scss";
 import UpButton from "../UI/UpButton";
 import { scrollContext } from "../../context/scroll-context";
+import About from "./About/About";
 
 function Home() {
   const { isScrolled } = useContext(scrollContext);
@@ -30,6 +31,7 @@ function Home() {
       ) : (
         <ProjectsScroll id="projects" />
       )}
+      <About id="about" />
       {isScrolled && <UpButton />}
     </div>
   );
