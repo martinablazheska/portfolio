@@ -10,7 +10,7 @@ const Contact: React.FC<{ id: string }> = ({ id }) => {
         <p className={classes.link}>
           {" "}
           <a href="mailto:blazheska.martina@gmail.com">
-            blazheska.martna@gmail.com
+            blazheska.martina@gmail.com
           </a>{" "}
         </p>
         <p className={classes.link}>
