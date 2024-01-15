@@ -14,9 +14,7 @@ const Contact: React.FC<{ id: string }> = ({ id }) => {
           </a>{" "}
         </p>
         <p className={classes.link}>
-          <a href="https://www.linkedin.com/in/martina-blazheska-9b1a92225/">
-            LinkedIn
-          </a>
+          <a href="https://www.linkedin.com/in/martina-blazheska/">LinkedIn</a>
         </p>
       </div>
     </div>

@@ -34,7 +34,7 @@ const About: React.FC<{ id: string }> = ({ id }) => {
             />
             <ContactButton
               icon={linkedinIcon}
-              link="https://www.linkedin.com/in/martina-blazheska-9b1a92225/"
+              link="https://www.linkedin.com/in/martina-blazheska/"
               alt="Linked In"
             />
           </div>
