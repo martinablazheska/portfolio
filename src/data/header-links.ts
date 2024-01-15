@@ -9,5 +9,5 @@ export const headerLinks: headerLinkType[] = [
   { id: 2, title: "skills", scrollTo: "skills" },
   { id: 3, title: "projects", scrollTo: "projects" },
   { id: 4, title: "about", scrollTo: "about" },
-  { id: 5, title: "contact", scrollTo: "about" },
+  { id: 5, title: "contact", scrollTo: "contact" },
 ];

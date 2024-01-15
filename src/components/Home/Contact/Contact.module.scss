@@ -1,0 +1,42 @@
+.contact {
+  margin-top: 40px;
+  padding: 0 25px 40px 25px;
+  width: 100%;
+  background-color: rgb(27, 25, 29);
+  display: flex;
+  justify-content: center;
+  div {
+    width: 100%;
+    max-width: 650px;
+    p {
+      margin: 0;
+      padding: 5px;
+      font-size: 0.9rem;
+      &:nth-of-type(1) {
+        font-family: var(--secondary-font);
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--faded-blue);
+        margin: 25px 0 15px 0;
+      }
+      a {
+        color: var(--faded-blue);
+        text-decoration: none;
+        &:hover {
+          color: #75c8f1;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 830px) {
+  .contact {
+    p {
+      font-size: 1.2rem;
+      &:nth-of-type(1) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

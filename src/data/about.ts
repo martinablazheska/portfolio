@@ -2,12 +2,12 @@ const aboutMe = [
   {
     id: 1,
     paragraph:
-      "I'm Martina, an aspiring frontend developer with a unique journey that blends engineering expertise with a passion for crafting exceptional web experiences. Let me walk you through my story!",
+      "I'm Martina, an aspiring frontend developer with a unique journey that blends engineering expertise with a passion for crafting exceptional web experiences. ",
   },
   {
     id: 2,
     paragraph:
-      "My passion for problem-solving and optimization led me to embark on the path of frontend development. To do this, I complete comprehensive courses and spent the past year immersed in projects to deepen my skills.",
+      "My passion for problem-solving and optimization led me to embark on the path of frontend development. To do this, I completed two comprehensive courses and spent the past year immersed in projects to deepen my skills.",
   },
 
   {

@@ -20,6 +20,7 @@ const About: React.FC<{ id: string }> = ({ id }) => {
             src={profilePhoto}
             alt="Profile photo"
           />
+
           <div className={classes.links}>
             <ContactButton
               icon={emailIcon}

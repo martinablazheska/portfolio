@@ -5,7 +5,7 @@
   width: 100%;
   .about-container {
     width: 90%;
-    max-width: 900px;
+    max-width: 600px;
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
@@ -55,21 +55,20 @@
   .about {
     width: 90%;
 
-    .about-container {
-      flex-direction: row;
-      align-items: flex-start;
+    // .about-container {
+    //   flex-direction: row;
+    //   align-items: flex-start;
 
-      .profile {
-        width: 40%;
-        .photo {
-          display: inline;
-          width: 100%;
-        }
-      }
+    .profile {
+      width: 40%;
+      // .photo {
+      //   // display: inline;
+      //   // width: 100%;
+      // }
+    }
 
-      .story {
-        width: 60%;
-      }
+    .story {
+      width: 60%;
     }
   }
 }
