@@ -1,40 +1,31 @@
-import { useState, useEffect, useContext } from "react";
+import { useWindowSize, useWindowScroll } from "@uidotdev/usehooks";
 
 import Introduction from "./Introduction/Introduction";
 import Skills from "./Skills/Skills";
 import Projects from "./Projects/Projects";
 import ProjectsScroll from "./Projects/ProjectsScroll";
-
-import classes from "./Home.module.scss";
 import UpButton from "../UI/UpButton";
-import { scrollContext } from "../../context/scroll-context";
 import About from "./About/About";
 import Contact from "./Contact/Contact";
 
+import classes from "./Home.module.scss";
+
 function Home() {
-  const { isScrolled } = useContext(scrollContext);
-  const [currentWindowWidth, setCurrentWindowWidth] = useState(
-    window.innerWidth
-  );
-  useEffect(() => {
-    function handleResize() {
-      setCurrentWindowWidth(window.innerWidth);
-    }
-    window.addEventListener("resize", handleResize);
-  }, [window.innerWidth]);
+  const size = useWindowSize();
+  const scroll = useWindowScroll();
 
   return (
     <div className={classes.home}>
       <Introduction />
       <Skills id="skills" />
-      {currentWindowWidth > 830 ? (
+      {(size.width as number) > 830 ? (
         <Projects id="projects" />
       ) : (
         <ProjectsScroll id="projects" />
       )}
       <About id="about" />
       <Contact id="contact" />
-      {isScrolled && <UpButton />}
+      {(scroll[0].y as number) >= 25 && <UpButton />}
     </div>
   );
 }

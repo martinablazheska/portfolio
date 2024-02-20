@@ -1,0 +1,37 @@
+.header-button {
+  background-color: transparent;
+  border: none;
+  font-family: var(--secondary-font);
+  padding: 0;
+  cursor: pointer;
+
+  --border-right: 2px;
+  --animation-color: var(--gold);
+  --fs-size: 1.1rem;
+
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  position: relative;
+  color: var(--neutral);
+  font-weight: 600;
+
+  .hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+  }
+
+  &:hover {
+    .hover-text {
+      width: 100%;
+      filter: drop-shadow(0 0 23px var(--animation-color));
+    }
+  }
+}

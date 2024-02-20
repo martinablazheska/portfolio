@@ -1,6 +1,5 @@
 import skills from "../../../data/skills";
 
-import codeBg from "../../../assets/skills-backdrop.jpg";
 import SkillWrapper from "../../UI/SkillWrapper";
 
 import classes from "./Skills.module.scss";
@@ -23,7 +22,7 @@ const Skills: React.FC<{ id: string }> = ({ id }) => {
             </SkillWrapper>
           ))}
         </div>
-        <img src={codeBg} alt="VS Code Screenshot" className={classes.code} />
+        {/* <img src={codeBg} alt="VS Code Screenshot" className={classes.code} /> */}
       </div>
     </div>
   );

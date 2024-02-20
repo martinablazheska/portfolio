@@ -1,59 +1,24 @@
-import { useContext, useEffect, useState } from "react";
-import { scrollContext } from "../../context/scroll-context";
+import { useWindowScroll } from "@uidotdev/usehooks";
 
-import HeaderLink from "./HeaderLink";
+import HeaderButton from "./HeaderButton";
 import { headerLinks } from "../../data/header-links";
-
-import openMenu from "../../assets/hamburger-svgrepo-com.svg";
-import closeMenu from "../../assets/close-very-dark-grey.svg";
 
 import classes from "./Header.module.scss";
 
 function Header() {
-  const [isCollapsed, setIsCollapsed] = useState(true);
-  const { isScrolled, setIsScrolled } = useContext(scrollContext);
-
-  function collapseHandler() {
-    setIsCollapsed((prevIsCollapsed) => !prevIsCollapsed);
-  }
-
-  function linkCollapseHandler() {
-    setIsCollapsed(true);
-  }
-
-  useEffect(() => {
-    function handleScroll() {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition >= window.innerHeight) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    }
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const headerClasses = `${classes.header} ${
-    isCollapsed ? classes.closed : classes.open
-  } ${isScrolled && classes.scrolled}`;
+  const scroll = useWindowScroll();
 
   return (
-    <div className={headerClasses} id="header">
-      <button className={classes["menu-button"]}>
-        <img src={openMenu} onClick={collapseHandler} alt="Open navigation" />
-      </button>
-      <button className={classes["close-button"]}>
-        <img src={closeMenu} alt="Close navigation" onClick={collapseHandler} />
-      </button>
+    <div
+      className={classes.header}
+      id="header"
+      style={{ padding: (scroll[0].y as number) > 30 ? "15px 0" : "30px 0" }}
+    >
       {headerLinks.map((link) => (
-        <HeaderLink
+        <HeaderButton
           key={link.id}
           title={link.title}
           scrollTo={link.scrollTo}
-          linkCollapseHandler={linkCollapseHandler}
         />
       ))}
     </div>
