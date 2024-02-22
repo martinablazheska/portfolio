@@ -31,7 +31,7 @@ const skills: skillType[] = [
     id: 4,
     name: "TypeScript",
     description:
-      "Leveraging TypeScript in React development to enhance type safety and scalability of codebases, as well as to benefit from early error detection, improved code maintainability and  developer experience.",
+      "Leveraging TypeScript in React development to enhance type safety and scalability of code bases, as well as to benefit from early error detection, improved code maintainability and developer experience.",
     highlightColor: "#18B5D9",
   },
 ];
