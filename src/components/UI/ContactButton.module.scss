@@ -7,7 +7,7 @@
   transition: all 0.2s;
   border: none;
   color: var(--neutral);
-  background-color: var(--dark-grey);
+  background-color: var(--very-dark-blue);
   a {
     color: var(--neutral);
     display: flex;
@@ -47,7 +47,7 @@
   }
 
   &::after {
-    background-color: var(--dark-grey);
+    background-color: var(--very-dark-blue);
   }
 
   &:hover::after {

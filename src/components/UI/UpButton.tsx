@@ -1,4 +1,4 @@
-import upArrow from "../../assets/up-arrow.svg";
+import { FaArrowUp } from "react-icons/fa6";
 import scrollToElement from "../../util/scroll-to-element";
 import classes from "./UpButton.module.scss";
 
@@ -8,7 +8,7 @@ function UpButton() {
   }
   return (
     <button className={classes["up-button"]} onClick={scrollUpHandler}>
-      <img src={upArrow} alt="Scroll Up" />
+      <FaArrowUp />
     </button>
   );
 }

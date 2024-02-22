@@ -82,7 +82,6 @@ fbxLoader.load("/avatar2.fbx  ", (object) => {
   mixer2 = new THREE.AnimationMixer(object);
   const action = mixer2.clipAction(object.animations[0]);
   action.play();
-  console.log("here");
 
   object.traverse(function (child) {
     if (child.isMesh) {
@@ -267,8 +266,6 @@ function init() {
   );
   camera.position.z = 3;
   cameraGroup.add(camera);
-
-  console.log(canvas, sizes.width);
 
   /**
    * Renderer

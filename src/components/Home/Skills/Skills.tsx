@@ -1,28 +1,36 @@
 import skills from "../../../data/skills";
 
-import SkillWrapper from "../../UI/SkillWrapper";
+import SkillContainer from "./SkillContainer";
+
+import { CgWebsite } from "react-icons/cg";
+import { SiJavascript } from "react-icons/si";
+import { SiReact } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
 
 import classes from "./Skills.module.scss";
 
 const Skills: React.FC<{ id: string }> = ({ id }) => {
+  const icons = [
+    <CgWebsite />,
+    <SiJavascript />,
+    <SiReact />,
+    <SiTypescript />,
+  ];
+
   return (
     <div className={classes.skills} id={id}>
       <h1>My Skills</h1>
-      <div className={classes["skill-container-wrapper"]}>
-        <div className={classes["skill-container"]}>
-          {skills.map((skill) => (
-            <SkillWrapper
-              key={skill.id}
-              title={skill.name}
-              imgSrc={skill.imgSrc}
-              imgAlt={skill.imgAlt}
-              highlightColor={skill.highlightColor}
-            >
-              {skill.description}
-            </SkillWrapper>
-          ))}
-        </div>
-        {/* <img src={codeBg} alt="VS Code Screenshot" className={classes.code} /> */}
+      <div className={classes["skill-container"]}>
+        {skills.map((skill) => (
+          <SkillContainer
+            key={skill.id}
+            title={skill.name}
+            icon={icons[skill.id - 1]}
+            highlightColor={skill.highlightColor}
+          >
+            {skill.description}
+          </SkillContainer>
+        ))}
       </div>
     </div>
   );

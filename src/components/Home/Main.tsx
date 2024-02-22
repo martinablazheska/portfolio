@@ -3,25 +3,25 @@ import { useWindowSize, useWindowScroll } from "@uidotdev/usehooks";
 import Introduction from "./Introduction/Introduction";
 import Skills from "./Skills/Skills";
 import Projects from "./Projects/Projects";
-import ProjectsScroll from "./Projects/ProjectsScroll";
+import ProjectsCarousel from "./Projects/ProjectsCarousel";
 import UpButton from "../UI/UpButton";
 import About from "./About/About";
 import Contact from "./Contact/Contact";
 
-import classes from "./Home.module.scss";
+import classes from "./Main.module.scss";
 
-function Home() {
+function Main() {
   const size = useWindowSize();
   const scroll = useWindowScroll();
 
   return (
-    <div className={classes.home}>
+    <div className={classes.main}>
       <Introduction />
       <Skills id="skills" />
       {(size.width as number) > 830 ? (
         <Projects id="projects" />
       ) : (
-        <ProjectsScroll id="projects" />
+        <ProjectsCarousel id="projects" />
       )}
       <About id="about" />
       <Contact id="contact" />
@@ -30,4 +30,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Main;

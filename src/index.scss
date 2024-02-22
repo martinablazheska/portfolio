@@ -18,8 +18,12 @@
 
   --gold: #dda60e;
   --orange: #f28705;
+  --peach: #f25749;
+  --light-blue: #18b5d9;
+  --bright-purple: #bd54bf;
   --very-dark-blue: #090f17;
   --dark-blue: #0e1624;
+  --dark-grey-blue: #151f31;
   --neutral: #f1efe7;
 
   //dimensional parameters
@@ -427,17 +431,58 @@ body {
   }
 }
 
-/* The switch - the box around the speaker*/
+/* The switch - the box around the */
 .toggle-music {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
   z-index: 1000;
+  font-size: 1.5rem;
+  background-color: var(--very-dark-blue);
+  border: 1px solid var(--neutral);
+  border-radius: 50%;
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+    color: var(--gold);
+    border-color: var(--gold);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  &::after {
+    color: var(--gold);
+    border-color: var(--gold);
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &::after {
+    background-color: var(--very-dark-blue);
+  }
+
+  &:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
 }
-.toggle-music:hover {
-  cursor: pointer;
-  color: white;
-}
+
 #bgMusic {
   display: none;
 }

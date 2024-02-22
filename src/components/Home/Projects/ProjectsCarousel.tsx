@@ -5,9 +5,9 @@ import { useState } from "react";
 import leftArrow from "../../../assets/left-arrow.svg";
 import rightArrow from "../../../assets/right-arrow.svg";
 
-import classes from "./ProjectsScroll.module.scss";
+import classes from "./ProjectsCarousel.module.scss";
 
-const ProjectsScroll: React.FC<{ id: string }> = ({ id }) => {
+const ProjectsCarousel: React.FC<{ id: string }> = ({ id }) => {
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
 
   function rightClickHandler() {
@@ -44,4 +44,4 @@ const ProjectsScroll: React.FC<{ id: string }> = ({ id }) => {
   );
 };
 
-export default ProjectsScroll;
+export default ProjectsCarousel;

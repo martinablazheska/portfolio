@@ -11,7 +11,7 @@
   font-family: inherit;
   font-weight: 500;
   color: var(--neutral);
-  background-color: var(--dark-grey);
+  background-color: var(--dark-grey-blue);
   a {
     color: var(--neutral);
     display: flex;
@@ -52,7 +52,7 @@
   }
 
   &::after {
-    background-color: var(--dark-grey);
+    background-color: var(--dark-grey-blue);
   }
 
   &:hover::after {
