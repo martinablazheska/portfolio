@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/portfolio/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500;600&display=swap"
@@ -12,10 +13,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Martina Blazheska</title>
-    <script type="module" crossorigin src="/portfolio/assets/index-eAPuZ_hr.js"></script>
-    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-25N77vqp.css">
+    <script type="module" crossorigin src="/portfolio/assets/index-T1am2jxA.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-tIEGb683.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root" style="z-index: 2; position: relative"></div>
+    <audio id="bgMusic" autoplay>
+      <source src="/portfolio/assets/audio-q1QkNUOq.mp3" type="audio/mp3" />
+    </audio>
+
+    <div class="toggle-music">♫</div>
+
+    <div class="loading-container">
+      <div
+        aria-label="Orange and tan hamster running in a metal wheel"
+        role="img"
+        class="wheel-and-hamster"
+      >
+        <div class="wheel"></div>
+        <div class="hamster">
+          <div class="hamster__body">
+            <div class="hamster__head">
+              <div class="hamster__ear"></div>
+              <div class="hamster__eye"></div>
+              <div class="hamster__nose"></div>
+            </div>
+            <div class="hamster__limb hamster__limb--fr"></div>
+            <div class="hamster__limb hamster__limb--fl"></div>
+            <div class="hamster__limb hamster__limb--br"></div>
+            <div class="hamster__limb hamster__limb--bl"></div>
+            <div class="hamster__tail"></div>
+          </div>
+        </div>
+        <div class="spoke"></div>
+      </div>
+    </div>
+    <canvas class="webgl"></canvas>
   </body>
 </html>
