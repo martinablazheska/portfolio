@@ -42,9 +42,8 @@
 
     p {
       margin-bottom: 25px;
-      &:last-of-type,
-      &:first-of-type {
-        color: var(--faded-blue);
+      &:last-of-type {
+        color: var(--gold);
         font-weight: 600;
       }
     }

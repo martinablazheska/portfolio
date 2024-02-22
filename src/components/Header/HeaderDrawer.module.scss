@@ -1,0 +1,39 @@
+.drawer {
+  .toggle-button {
+    position: absolute;
+    background: transparent;
+    color: var(--neutral);
+    border: none;
+    padding: none;
+    font-size: 1.8rem;
+    margin: 10px 0 0 10px;
+    transition: color ease-in 0.3s;
+    cursor: pointer;
+    &:hover {
+      color: var(--gold);
+    }
+  }
+}
+
+.open {
+  position: fixed;
+  height: 100dvh;
+  width: 65%;
+  background-color: var(--very-dark-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 35px;
+  padding: 15px;
+  z-index: 5;
+  padding-top: 100px;
+  .toggle-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  button {
+    font-size: 1.3rem;
+  }
+}

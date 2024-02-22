@@ -1,14 +1,15 @@
-import ScrollContextProvider from "./context/scroll-context";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 import Header from "./components/Header/Header";
-import Home from "./components/Home/Home";
-
+import HeaderDrawer from "./components/Header/HeaderDrawer";
+import Main from "./components/Home/Main";
 function App() {
+  const size = useWindowSize();
   return (
-    <ScrollContextProvider>
-      <Header />
-      <Home />
-    </ScrollContextProvider>
+    <>
+      {(size.width as number) > 700 ? <Header /> : <HeaderDrawer />}
+      <Main />
+    </>
   );
 }
 

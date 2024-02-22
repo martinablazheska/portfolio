@@ -1,23 +1,23 @@
 .up-button {
-  background-color: var(--dark-grey);
+  background-color: var(--very-dark-blue);
+  border: none;
   width: 45px;
   height: 45px;
+  font-size: 1rem;
+  color: var(--neutral);
+  border: 1px solid var(--neutral);
+  border-radius: 50%;
 
   position: fixed;
-  right: 0;
-  bottom: 0;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  right: 20px;
+  bottom: 90px;
   z-index: 2;
-
-  img {
-    width: 70%;
-    filter: brightness(1.2);
-  }
 
   &:hover {
     cursor: pointer;
     transform: translateY(-3px);
+    color: var(--gold);
+    border-color: var(--gold);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 
@@ -27,7 +27,8 @@
   }
 
   &::after {
-    content: "";
+    color: var(--gold);
+    border-color: var(--gold);
     display: inline-block;
     height: 100%;
     width: 100%;
@@ -40,7 +41,7 @@
   }
 
   &::after {
-    background-color: var(--dark-grey);
+    background-color: var(--very-dark-blue);
   }
 
   &:hover::after {

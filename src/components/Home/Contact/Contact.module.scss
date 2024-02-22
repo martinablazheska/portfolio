@@ -16,14 +16,15 @@
         font-family: var(--secondary-font);
         font-size: 1.1rem;
         font-weight: 600;
-        color: var(--faded-blue);
+        color: var(--neutral);
         margin: 25px 0 15px 0;
       }
       a {
-        color: var(--faded-blue);
+        color: var(--gold);
         text-decoration: none;
+        transition: color ease-in 0.3s;
         &:hover {
-          color: #75c8f1;
+          color: var(--orange);
         }
       }
     }
