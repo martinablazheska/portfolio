@@ -56,7 +56,7 @@ const loadingManager = new THREE.LoadingManager(() => {
 
 const fbxLoader = new FBXLoader(loadingManager);
 
-fbxLoader.load("/avatar.fbx", (object) => {
+fbxLoader.load("../assets/avatar.fbx", (object) => {
   mixer = new THREE.AnimationMixer(object);
   const action = mixer.clipAction(object.animations[0]);
   action.play();
@@ -78,7 +78,7 @@ fbxLoader.load("/avatar.fbx", (object) => {
   avatar.position.y = -1.5;
 });
 
-fbxLoader.load("/avatar2.fbx", (object) => {
+fbxLoader.load("../assets/avatar2.fbx", (object) => {
   mixer2 = new THREE.AnimationMixer(object);
   const action = mixer2.clipAction(object.animations[0]);
   action.play();
@@ -104,7 +104,7 @@ fbxLoader.load("/avatar2.fbx", (object) => {
     avatarPushups.position.x = 3;
   }
 });
-fbxLoader.load("/avatar3.fbx", (object) => {
+fbxLoader.load("../assets/avatar3.fbx", (object) => {
   mixer3 = new THREE.AnimationMixer(object);
   const action = mixer3.clipAction(object.animations[0]);
   action.play();
