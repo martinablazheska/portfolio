@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { ClickAwayListener } from "@mui/base";
+
 import HeaderButton from "./HeaderButton";
 import { headerLinks } from "../../data/header-links";
 
@@ -16,27 +18,29 @@ function HeaderDrawer() {
   }
 
   return (
-    <div
-      className={
-        isOpen ? `${classes.drawer} ${classes.open}` : `${classes.drawer}`
-      }
-    >
-      <button
-        onClick={toggleDrawerHandler}
-        className={classes["toggle-button"]}
+    <ClickAwayListener onClickAway={() => setIsOpen(false)}>
+      <div
+        className={
+          isOpen ? `${classes.drawer} ${classes.open}` : `${classes.drawer}`
+        }
       >
-        {isOpen ? <HiX /> : <HiOutlineMenu />}
-      </button>
-      {isOpen &&
-        headerLinks.map((link) => (
-          <HeaderButton
-            key={link.id}
-            title={link.title}
-            scrollTo={link.scrollTo}
-            toggleDrawerHandler={toggleDrawerHandler}
-          />
-        ))}
-    </div>
+        <button
+          onClick={toggleDrawerHandler}
+          className={classes["toggle-button"]}
+        >
+          {isOpen ? <HiX /> : <HiOutlineMenu />}
+        </button>
+        {isOpen &&
+          headerLinks.map((link) => (
+            <HeaderButton
+              key={link.id}
+              title={link.title}
+              scrollTo={link.scrollTo}
+              toggleDrawerHandler={toggleDrawerHandler}
+            />
+          ))}
+      </div>
+    </ClickAwayListener>
   );
 }
 

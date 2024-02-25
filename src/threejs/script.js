@@ -36,21 +36,13 @@ let avatarPushups = null;
 let avatarPhone = null;
 
 const loadingElement = document.querySelector(".loading-container");
-const toggleMusic = document.querySelector(".toggle-music");
-
-toggleMusic.addEventListener("click", () => {
-  if (bgMusic.currentTime) {
-    bgMusic.pause();
-    bgMusic.currentTime = 0;
-  } else {
-    bgMusic.play();
-  }
-  // To stop and reset the music
-});
+const body = document.querySelector("body");
+body.style.overflow = "hidden";
 const loadingManager = new THREE.LoadingManager(() => {
   init();
   setTimeout(() => {
     loadingElement.style.display = "none";
+    body.style.overflow = "auto";
   }, 1000);
 });
 
@@ -123,7 +115,7 @@ fbxLoader.load("avatar3.fbx", (object) => {
   scene.add(object);
 
   if (sizes.height < 1000) {
-    avatarPhone.position.y = objectsDistance * -3.4;
+    avatarPhone.position.y = objectsDistance * -3.45;
   } else {
     avatarPhone.position.y = objectsDistance * -3;
   }

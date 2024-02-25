@@ -70,7 +70,7 @@ body {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: rgb(16, 31, 46);
+  background-color: var(--dark-blue);
   z-index: 100;
   display: flex;
   justify-content: center;
@@ -430,134 +430,6 @@ body {
     transform: rotate(-1turn);
   }
 }
-
-/* The switch - the box around the */
-.toggle-music {
-  width: 45px;
-  height: 45px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-  font-size: 1.5rem;
-  background-color: var(--very-dark-blue);
-  border: 1px solid var(--neutral);
-  border-radius: 50%;
-  &:hover {
-    cursor: pointer;
-    transform: translateY(-3px);
-    color: var(--gold);
-    border-color: var(--gold);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-
-  &:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  &::after {
-    color: var(--gold);
-    border-color: var(--gold);
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 0.4s;
-  }
-
-  &::after {
-    background-color: var(--very-dark-blue);
-  }
-
-  &:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-  }
-}
-
 #bgMusic {
   display: none;
-}
-.toggleSwitch {
-  width: 50px;
-  height: 50px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(39, 39, 39);
-  border-radius: 50%;
-  cursor: pointer;
-  transition-duration: 0.3s;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.13);
-  overflow: hidden;
-}
-
-/* Hide default HTML checkbox */
-#checkboxInput {
-  display: none;
-}
-
-.bell {
-  width: 18px;
-}
-
-.bell path {
-  fill: white;
-}
-
-.speaker {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  transition-duration: 0.3s;
-}
-
-.speaker svg {
-  width: 18px;
-}
-
-.mute-speaker {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  z-index: 3;
-  transition-duration: 0.3s;
-}
-
-.mute-speaker svg {
-  width: 18px;
-}
-
-#checkboxInput:checked + .toggleSwitch .speaker {
-  opacity: 0;
-  transition-duration: 0.3s;
-}
-
-#checkboxInput:checked + .toggleSwitch .mute-speaker {
-  opacity: 1;
-  transition-duration: 0.3s;
-}
-
-#checkboxInput:active + .toggleSwitch {
-  transform: scale(0.7);
-}
-
-#checkboxInput:hover + .toggleSwitch {
-  background-color: rgb(61, 61, 61);
 }

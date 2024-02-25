@@ -1,22 +1,18 @@
-.up-button {
-  background-color: var(--very-dark-blue);
-  border: none;
+.toggle-music {
   width: 45px;
   height: 45px;
-  font-size: 1rem;
-  color: var(--neutral);
-  border: 1px solid var(--neutral);
-  border-radius: 50%;
-
-  position: fixed;
-  right: 20px;
-  bottom: 90px;
-  z-index: 2;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  font-size: 1.5rem;
+  background-color: var(--very-dark-blue);
+  border: 1px solid var(--neutral);
+  border-radius: 50%;
+  color: var(--neutral);
   &:hover {
     cursor: pointer;
     transform: translateY(-3px);

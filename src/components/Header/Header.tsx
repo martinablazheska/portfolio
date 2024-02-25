@@ -12,7 +12,13 @@ function Header() {
     <div
       className={classes.header}
       id="header"
-      style={{ padding: (scroll[0].y as number) > 32 ? "15px 0" : "30px 0" }}
+      style={{
+        padding: (scroll[0].y as number) > 32 ? "15px 0" : "30px 0",
+        backgroundColor:
+          (scroll[0].y as number) > window.innerHeight
+            ? "var(--dark-blue)"
+            : "transparent",
+      }}
     >
       {headerLinks.map((link) => (
         <HeaderButton
