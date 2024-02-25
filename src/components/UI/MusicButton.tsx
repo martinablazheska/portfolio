@@ -21,7 +21,7 @@ const MusicButton = () => {
   }
   return (
     <>
-      <audio id="bgMusic" controls>
+      <audio id="bgMusic">
         <source src={saturdayNight} type="audio/mp3" />
       </audio>
 

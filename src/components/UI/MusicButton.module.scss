@@ -1,4 +1,5 @@
 .toggle-music {
+  color: var(--neutral);
   width: 45px;
   height: 45px;
   display: flex;
@@ -7,12 +8,12 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 1000;
-  font-size: 1.5rem;
+  z-index: 90;
+  font-size: 1.2rem;
   background-color: var(--very-dark-blue);
   border: 1px solid var(--neutral);
   border-radius: 50%;
-  color: var(--neutral);
+
   &:hover {
     cursor: pointer;
     transform: translateY(-3px);
