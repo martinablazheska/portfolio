@@ -1,4 +1,5 @@
 import { FaArrowUp } from "react-icons/fa6";
+
 import scrollToElement from "../../util/scroll-to-element";
 import classes from "./UpButton.module.scss";
 
