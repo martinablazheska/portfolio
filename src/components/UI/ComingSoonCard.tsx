@@ -6,7 +6,9 @@ function ComingSoonCard() {
   return (
     <div className={classes["coming-soon"]}>
       <div className={classes.info}>
-        <img src={upcoming.imgSrc} alt={upcoming.imgAlt} />
+        <div className={classes.image}>
+          <img src={upcoming.imgSrc} alt={upcoming.imgAlt} />
+        </div>
         <div>
           <h2>{upcoming.name}</h2>
           <span>coming soon</span>

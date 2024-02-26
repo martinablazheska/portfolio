@@ -11,7 +11,9 @@ const ProjectCard: React.FC<{ project: projectType }> = ({ project }) => {
   return (
     <div className={classes["project-card"]}>
       <div className={classes.info}>
-        <img src={project.imgSrc} alt={project.imgAlt} />
+        <div className={classes.image}>
+          <img src={project.imgSrc} alt={project.imgAlt} />
+        </div>
         <div>
           <h2>{project.name}</h2>
           <span>completed project</span>
