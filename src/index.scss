@@ -75,6 +75,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.loading__text {
+  font-family: var(--secondary-font);
+  div {
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+  }
 }
 
 .wheel-and-hamster {
