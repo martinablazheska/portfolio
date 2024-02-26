@@ -86,14 +86,28 @@ fbxLoader.load("avatar2.fbx", (object) => {
 
   scene.add(object);
 
-  if (sizes.height < 1000) {
-    avatarPushups.position.y = objectsDistance * -1 - 3.2;
-    avatarPushups.position.x = 2.5;
-  } else {
-    avatarPushups.position.y = objectsDistance * -1 - 2.5;
+  // if (sizes.height < 1000) {
+  //   avatarPushups.position.y = objectsDistance * -1 - 3.2;
+  //   avatarPushups.position.x = 2.5;
+  // } else {
+  //   avatarPushups.position.y = objectsDistance * -1 - 2.5;
+  //   avatarPushups.position.x = 3;
+  // }
+
+  if (sizes.width >= 1660) {
+    avatarPushups.position.y = objectsDistance * -1 - 3.3;
     avatarPushups.position.x = 3;
   }
+  if (sizes.width >= 860 && sizes.width < 1660) {
+    avatarPushups.position.y = objectsDistance * -1 - 6;
+    avatarPushups.position.x = 0;
+  }
+  if (sizes.width < 860) {
+    avatarPushups.position.y = objectsDistance * -1 - 15.6;
+    avatarPushups.position.x = 0;
+  }
 });
+
 fbxLoader.load("avatar3.fbx", (object) => {
   mixer3 = new THREE.AnimationMixer(object);
   const action = mixer3.clipAction(object.animations[0]);
@@ -110,14 +124,33 @@ fbxLoader.load("avatar3.fbx", (object) => {
 
   avatarPhone = object;
 
-  scene.add(object);
-
-  if (sizes.height < 1000) {
-    avatarPhone.position.y = objectsDistance * -3.45;
-  } else {
-    avatarPhone.position.y = objectsDistance * -3;
+  if (sizes.width > 390) {
+    scene.add(object);
   }
-  avatarPhone.position.x = 2;
+
+  // if (sizes.height < 1000) {
+  //   avatarPhone.position.y = objectsDistance * -3.45;
+  // } else {
+  //   avatarPhone.position.y = objectsDistance * -3;
+  // }
+  // avatarPhone.position.x = 2;
+
+  if (sizes.width >= 1660) {
+    avatarPhone.position.y = objectsDistance * -3.4;
+    avatarPhone.position.x = 2;
+  }
+  if (sizes.width >= 860 && sizes.width < 1660) {
+    avatarPhone.position.y = objectsDistance * -3.9;
+    avatarPhone.position.x = 2;
+  }
+  if (sizes.width >= 830 && sizes.width < 860) {
+    avatarPhone.position.y = objectsDistance * -6;
+    avatarPhone.position.x = 1.5;
+  }
+  if (sizes.width < 830) {
+    avatarPhone.position.y = objectsDistance * -4.2;
+    avatarPhone.position.x = 1;
+  }
 });
 
 function init() {
@@ -192,7 +225,7 @@ function init() {
     new THREE.BoxGeometry(1.5, 1.5, 1.5, 20, 20, 20, 20),
     particlesMaterial
   );
-  cubeParticles.position.y = objectsDistance * -1.3;
+  cubeParticles.position.y = objectsDistance * -1.22;
   scene.add(cubeParticles);
 
   const pointLight = new THREE.PointLight("#dda60e", 15, 10, 1);

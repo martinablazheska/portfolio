@@ -26,7 +26,7 @@ function Main() {
       )}
       <About id="about" />
       <Contact id="contact" />
-      {(scroll[0].y as number) >= 25 && <UpButton />}
+      {(scroll[0].y as number) >= window.innerHeight + 20 && <UpButton />}
       <MusicButton />
     </div>
   );
