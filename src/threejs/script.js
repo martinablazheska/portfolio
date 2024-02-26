@@ -1,13 +1,11 @@
 import * as THREE from "three";
 import { FBXLoader } from "three/addons/loaders/FBXLoader.js";
 import gsap from "gsap";
+import { width } from "@mui/system";
 /**
  * Base
  */
 // Debug
-
-// Portfolio song hurah
-const bgMusic = document.getElementById("bgMusic");
 
 // Canvas
 const canvas = document.querySelector(".webgl");
@@ -137,8 +135,9 @@ function init() {
 
   sphereMain.position.x = -4;
   sphereMain.position.y = -2.5;
-  scene.add(sphereMain);
-
+  if (sizes.width > 700) {
+    scene.add(sphereMain);
+  }
   const sphereMainSecond = new THREE.Mesh(
     new THREE.SphereGeometry(1.5, 100, 100),
     new THREE.MeshStandardMaterial({
@@ -158,7 +157,9 @@ function init() {
 
   sphereMainSecond.position.x = 4;
   sphereMainSecond.position.y = 2.5;
-  scene.add(sphereMainSecond);
+  if (sizes.width > 700) {
+    scene.add(sphereMainSecond);
+  }
 
   const particlesCount = 1000;
   const positions = new Float32Array(particlesCount * 3);
