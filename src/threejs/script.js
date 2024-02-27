@@ -16,6 +16,13 @@ const scene = new THREE.Scene();
 /**
  * Sizes
  */
+
+const loaderText1 = document.querySelector("#loading-text-1");
+loaderText1.innerHTML = "Loading super cool resources...";
+
+const loaderText2 = document.querySelector("#loading-text-2");
+loaderText2.innerHTML = "Please wait!";
+
 const sizes = {
   width: window.innerWidth,
   height: window.innerHeight,
