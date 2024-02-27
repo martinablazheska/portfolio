@@ -1,7 +1,7 @@
 import { useState } from "react";
 import saturdayNight from "../../assets/audio.mp3";
-import { MdMusicNote } from "react-icons/md";
-import { MdMusicOff } from "react-icons/md";
+import { TbMusicOff } from "react-icons/tb";
+import { TbMusic } from "react-icons/tb";
 
 import classes from "./MusicButton.module.scss";
 
@@ -21,13 +21,12 @@ const MusicButton = () => {
   }
   return (
     <>
+      <button onClick={toggleMusic} className={classes["toggle-music"]}>
+        {isPlaying ? <TbMusic /> : <TbMusicOff />}
+      </button>
       <audio id="bgMusic">
         <source src={saturdayNight} type="audio/mp3" />
       </audio>
-
-      <button onClick={toggleMusic} className={classes["toggle-music"]}>
-        {isPlaying ? <MdMusicNote /> : <MdMusicOff />}
-      </button>
     </>
   );
 };

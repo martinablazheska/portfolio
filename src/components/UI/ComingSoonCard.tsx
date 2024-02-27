@@ -7,6 +7,7 @@ function ComingSoonCard() {
     <div className={classes["coming-soon"]}>
       <div className={classes.info}>
         <div className={classes.image}>
+          {""}
           <img src={upcoming.imgSrc} alt={upcoming.imgAlt} />
         </div>
         <div>
