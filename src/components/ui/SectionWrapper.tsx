@@ -1,11 +1,13 @@
 import React from "react";
+import { cn } from "@/lib/utils";
 
-const SectionWrapper: React.FC<{ children: React.ReactNode; id: string }> = ({
-  children,
-  id,
-}) => {
+const SectionWrapper: React.FC<{
+  children: React.ReactNode;
+  id: string;
+  className?: string;
+}> = ({ children, id, className }) => {
   return (
-    <section className="h-screen w-full" id={id}>
+    <section className={cn("min-h-screen w-full", className)} id={id}>
       {children}
     </section>
   );

@@ -11,7 +11,7 @@ export default {
       },
       colors: {
         darkYellow: "#dda60e",
-        veryDarkBlue: " #090f17",
+        veryDarkBlue: "#090f17",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -56,6 +56,13 @@ export default {
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         mono: ["Roboto Mono", "monospace"],
+      },
+      backgroundImage: {
+        cardGradient:
+          "linear-gradient(52deg, rgba(14,14,45,1) 0%, rgba(0,212,255,0) 100%)",
+      },
+      boxShadow: {
+        cardBoxShadow: "0px 10px 10px #090f17",
       },
     },
   },
