@@ -15,7 +15,7 @@ import { MenuIcon, X as XIcon } from "lucide-react";
 
 const navigationItems = [
   "Home",
-  "Snapshots",
+  "Skills",
   "Technologies",
   "Projects",
   "Experience",
