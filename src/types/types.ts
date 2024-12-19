@@ -9,10 +9,21 @@ export type Technology = {
   progress: number;
   icon: React.ReactNode;
   categories?: string[];
-  description?: string;
-  projects?: Projects[];
+  description: string;
+  projects?: Project[];
 };
 
-export type Projects = {
+export type Project = {
   name: string;
+};
+
+export type Experience = {
+  company: string;
+  position: string;
+  start: string;
+  end: string;
+  description: string;
+  skills?: string[];
+  projects?: string[];
+  technologies?: string[];
 };
