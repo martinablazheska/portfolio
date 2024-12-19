@@ -1,5 +1,5 @@
 import SectionWrapper from "@/components/ui/SectionWrapper";
-import SnapshotCard from "@/pages/home/components/snapshots/SnapshotCard";
+import SkillsCard from "@/pages/home/components/skills/SkillsCard";
 import {
   Origami,
   MonitorSmartphone,
@@ -19,10 +19,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Snapshot } from "@/types/types";
+import { Skill } from "@/types/types";
 import Autoplay from "embla-carousel-autoplay";
 
-export const snapshots: Snapshot[] = [
+export const skills: Skill[] = [
   {
     title: "Frontend Architecture",
     description:
@@ -85,18 +85,18 @@ export const snapshots: Snapshot[] = [
   },
 ];
 
-const Snapshots = () => {
+const Skills = () => {
   return (
     <SectionWrapper
-      id="Snapshots"
+      id="Skills"
       className="flex flex-col md:justify-evenly items-center"
     >
       <h2 className="text-sm md:text-xl lg:text-2xl font-bold tracking-[0.25em] text-center mb-4 md:mb-10">
-        Technical Snapshots
+        Skills{" "}
       </h2>
       {/* <div className="w-full grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4 px-4">
-        {snapshots.map((snapshot, index) => (
-          <SnapshotCard {...snapshot} key={index} />
+        {skills.map((skill, index) => (
+          <SkillsCard {...skill} key={index} />
         ))}
       </div> */}
       <Carousel
@@ -111,12 +111,12 @@ const Snapshots = () => {
         ]}
       >
         <CarouselContent>
-          {snapshots.map((snapshot, index) => (
+          {skills.map((skill, index) => (
             <CarouselItem
               key={index}
               className="py-3 md:basis-1/2 lg:basis-1/3"
             >
-              <SnapshotCard {...snapshot} />
+              <SkillsCard {...skill} />
             </CarouselItem>
           ))}
         </CarouselContent>
@@ -127,4 +127,4 @@ const Snapshots = () => {
   );
 };
 
-export default Snapshots;
+export default Skills;

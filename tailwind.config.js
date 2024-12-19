@@ -58,11 +58,12 @@ export default {
         mono: ["Roboto Mono", "monospace"],
       },
       backgroundImage: {
-        cardGradient:
-          "linear-gradient(52deg, rgba(14,14,45,1) 0%, rgba(0,212,255,0) 100%)",
+        darkBlueGradient:
+          "linear-gradient(52deg, rgba(14,14,45,0.8) 0%, rgba(0,212,255,0) 100%)",
       },
       boxShadow: {
-        cardBoxShadow: "0px 10px 10px #090f17",
+        cardShadow: "0px 10px 10px #090f17",
+        tooltipTriggerShadow: "0px 3px 3px #090f17",
       },
     },
   },
