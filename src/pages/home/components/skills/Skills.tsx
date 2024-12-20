@@ -1,5 +1,5 @@
 import SectionWrapper from "@/components/ui/SectionWrapper";
-import SkillsCard from "@/pages/home/components/skills/SkillsCard";
+import SkillCard from "@/pages/home/components/skills/SkillCard";
 
 import {
   Carousel,
@@ -22,7 +22,7 @@ const Skills = () => {
       </h2>
       {/* <div className="w-full grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4 px-4">
         {skills.map((skill, index) => (
-          <SkillsCard {...skill} key={index} />
+          <SkillCard {...skill} key={index} />
         ))}
       </div> */}
       <Carousel
@@ -42,7 +42,7 @@ const Skills = () => {
               key={index}
               className="py-3 md:basis-1/2 lg:basis-1/3"
             >
-              <SkillsCard {...skill} />
+              <SkillCard {...skill} />
             </CarouselItem>
           ))}
         </CarouselContent>

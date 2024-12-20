@@ -27,3 +27,11 @@ export type Experience = {
   projects?: string[];
   technologies?: string[];
 };
+
+export type Testimonial = {
+  name: string;
+  title: string;
+  company: string;
+  testimonial: string;
+  image: string;
+};

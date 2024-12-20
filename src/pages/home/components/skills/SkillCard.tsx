@@ -1,7 +1,7 @@
 import React from "react";
 import { Skill } from "@/types/types";
 
-const SkillsCard: React.FC<Skill> = ({ title, description, icon }) => {
+const SkillCard: React.FC<Skill> = ({ title, description, icon }) => {
   return (
     <div className="w-full h-full flex flex-col gap-4 border border-white rounded-lg p-6 bg-darkBlueGradient hover:-translate-y-2 hover:shadow-cardShadow transition-transform duration-500">
       <div className="w-full flex justify-end">{icon}</div>
@@ -15,4 +15,4 @@ const SkillsCard: React.FC<Skill> = ({ title, description, icon }) => {
   );
 };
 
-export default SkillsCard;
+export default SkillCard;

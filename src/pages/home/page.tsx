@@ -3,14 +3,16 @@ import Hero from "@/pages/home/components/hero/Hero";
 import Skills from "@/pages/home/components/skills/Skills";
 import Technologies from "@/pages/home/components/technologies/Technologies";
 import Experience from "@/pages/home/components/experience/Experience";
+import Testimonials from "@/pages/home/components/testimonials/Testimonials";
 
 const HomePage: React.FC = () => {
   return (
-    <div>
+    <div className="w-full flex flex-col gap-20 pb-10">
       <Hero />
       <Skills />
       <Technologies />
       <Experience />
+      <Testimonials />
     </div>
   );
 };

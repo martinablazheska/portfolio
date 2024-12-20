@@ -15,10 +15,10 @@ const Experience = () => {
         <Accordion
           itemClasses={{
             heading: "bg-darkBlueGradient mt-2 rounded-lg w-full",
-            content: "bg-darkBlueGradient mt-2 rounded-lg px-4",
+            content: "bg-darkBlueGradient mt-2 rounded-lg",
             titleWrapper: "flex flex-col justify-start items-start",
-            title: "text-md font-bold ",
-            subtitle: "text-sm ",
+            title: "text-sm md:text-md font-bold ",
+            subtitle: "text-xs md:text-sm",
             trigger: "flex justify-between w-full px-4",
           }}
           defaultExpandedKeys={["0"]}
@@ -28,16 +28,17 @@ const Experience = () => {
               key={index}
               title={`${experience.position} @ ${experience.company}`}
               subtitle={`${experience.start} - ${experience.end}`}
+              aria-label={`${experience.position} @ ${experience.company}`}
             >
-              <div className="flex flex-col w-full gap-3">
-                <div className="font-mono text-sm text-justify border-b-2 border-gray-400 py-2">
+              <div className="flex flex-col w-full gap-3 p-4">
+                <div className="font-mono text-xs md:text-sm text-justify border-b-2 border-gray-400 py-2">
                   {experience.description}
                 </div>
                 <div className="w-full flex gap-2 flex-wrap">
                   {experience.skills.map(skill => (
                     <span
                       key={skill}
-                      className="px-3 py-1 bg-gradient-to-r from-pink-500 to-darkYellow text-white text-xs rounded-full"
+                      className="px-3 py-1 bg-gradient-to-r from-pink-500 to-darkYellow text-white text-[10px] md:text-xs rounded-full"
                     >
                       {skill}
                     </span>
@@ -45,7 +46,7 @@ const Experience = () => {
                   {experience.technologies.map(technology => (
                     <span
                       key={technology}
-                      className="px-3 py-1 bg-gradient-to-r from-pink-500 to-darkYellow text-white text-xs rounded-full"
+                      className="px-3 py-1 bg-gradient-to-r from-pink-500 to-darkYellow text-white text-[10px] md:text-xs rounded-full"
                     >
                       {technology}
                     </span>
