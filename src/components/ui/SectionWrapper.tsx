@@ -7,7 +7,7 @@ const SectionWrapper: React.FC<{
   className?: string;
 }> = ({ children, id, className }) => {
   return (
-    <section className={cn("min-h-screen w-full", className)} id={id}>
+    <section className={cn("w-full", className)} id={id}>
       {children}
     </section>
   );
