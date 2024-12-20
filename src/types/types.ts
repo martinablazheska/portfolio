@@ -35,3 +35,10 @@ export type Testimonial = {
   testimonial: string;
   image: string;
 };
+
+export type ContactLink = {
+  name: string;
+  link: string;
+  icon: React.ReactNode;
+  download?: string;
+};
