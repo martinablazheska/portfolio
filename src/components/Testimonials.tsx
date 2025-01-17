@@ -1,6 +1,6 @@
 import SectionHeading from "@/components/ui/SectionHeading";
 import SectionWrapper from "@/components/ui/SectionWrapper";
-import TestimonialCard from "@/pages/home/components/testimonials/TestimonialCard";
+import TestimonialCard from "@/components/TestimonialCard";
 import { testimonials } from "@/store/testimonials";
 
 const Testimonials = () => {

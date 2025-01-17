@@ -1,5 +1,5 @@
 import SectionWrapper from "@/components/ui/SectionWrapper";
-import SkillCard from "@/pages/home/components/skills/SkillCard";
+import SkillCard from "@/components/SkillCard";
 
 import {
   Carousel,
