@@ -1,6 +1,6 @@
 import SectionHeading from "@/components/ui/SectionHeading";
 import SectionWrapper from "@/components/ui/SectionWrapper";
-import ContactButton from "@/pages/home/components/about/ContactButton";
+import ContactButton from "@/components/ContactButton";
 import { links } from "@/store/links";
 
 const About = () => {

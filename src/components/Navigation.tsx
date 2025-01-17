@@ -10,7 +10,7 @@ import {
   useDisclosure,
 } from "@nextui-org/react";
 import { Button } from "@nextui-org/button";
-import NavigationButton from "@/pages/layout/components/NavigationButton";
+import NavigationButton from "@/components/NavigationButton";
 import { MenuIcon, X as XIcon } from "lucide-react";
 
 const navigationItems = [

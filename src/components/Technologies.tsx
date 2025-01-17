@@ -1,6 +1,6 @@
 import { useState } from "react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
-import TechnologyTooltip from "@/pages/home/components/technologies/TechnologyTooltip";
+import TechnologyTooltip from "@/components/TechnologyTooltip";
 import { technologies } from "@/store/technologies";
 import { Technology } from "@/types/types";
 
