@@ -5,7 +5,7 @@ type ProjectCardProps = Project & {
   id: number;
 };
 
-const MAX_DESCRIPTION_LENGTH = 110;
+const MAX_DESCRIPTION_LENGTH = 90;
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   name,
@@ -33,7 +33,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <h3 className="font-bold text-lg tracking-wider border-b border-b-white pb-2">
         {name}
       </h3>
-      <p className="font-mono text-xs">{truncatedDescription}</p>
+      <p className="font-mono text-xs md:text-sm">{truncatedDescription}</p>
     </Link>
   );
 };
