@@ -22,7 +22,7 @@ export type Project = {
   skills: string[];
   repository?: string;
   deployment?: string;
-  images?: string[];
+  images: string[];
 };
 
 export type Experience = {
