@@ -31,7 +31,7 @@ const Navigation: React.FC = () => {
 
   useEffect(() => {
     if (debouncedScrollY !== null) {
-      setIsOpaque(debouncedScrollY > window.innerHeight - 50);
+      setIsOpaque(debouncedScrollY > window.innerHeight - 250);
     }
   }, [debouncedScrollY]);
 

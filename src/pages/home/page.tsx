@@ -8,6 +8,7 @@ import Experience from "@/components/Experience";
 import Testimonials from "@/components/Testimonials";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
+import ScrollUpButton from "@/components/ScrollUpButton";
 
 const HomePage: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const HomePage: React.FC = () => {
       <Testimonials />
       <About />
       <Footer />
+      <ScrollUpButton />
     </div>
   );
 };

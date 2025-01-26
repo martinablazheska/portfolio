@@ -2,11 +2,16 @@ import React from "react";
 import { Tooltip } from "@nextui-org/tooltip";
 import { ContactLink } from "@/types/types";
 
-const ContactButton: React.FC<ContactLink> = ({
+type ContactButtonProps = ContactLink & {
+  showTooltip?: boolean;
+};
+
+const ContactButton: React.FC<ContactButtonProps> = ({
   name,
   link,
   download,
   icon,
+  showTooltip = true,
 }) => {
   return (
     <Tooltip
@@ -29,7 +34,7 @@ const ContactButton: React.FC<ContactLink> = ({
           },
         },
       }}
-      classNames={{ content: "text-white text-xs" }}
+      classNames={{ content: `text-white text-xs ${!showTooltip && "hidden"}` }}
       offset={-7}
     >
       {download ? (
