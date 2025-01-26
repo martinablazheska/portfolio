@@ -1,6 +1,7 @@
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import { Accordion, AccordionItem } from "@nextui-org/accordion";
 import { experiences } from "@/store/experiences";
+import { ChevronDown, ChevronLeft } from "lucide-react";
 
 const Experience = () => {
   return (
@@ -20,6 +21,7 @@ const Experience = () => {
             title: "text-sm md:text-md font-bold ",
             subtitle: "text-xs md:text-sm",
             trigger: "flex justify-between w-full px-4",
+            indicator: "data-[open=true]:-rotate-90",
           }}
           defaultExpandedKeys={["0"]}
         >
