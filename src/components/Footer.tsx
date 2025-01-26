@@ -7,7 +7,7 @@ const Footer = () => {
         href="https://linkedin.com/in/martina-blazheska"
         target="_blank"
         rel="noopener noreferrer"
-        className="underline"
+        className="underline underline-offset-2"
       >
         LinkedIn
       </a>
@@ -15,7 +15,7 @@ const Footer = () => {
         href="https://github.com/martinablazheska"
         target="_blank"
         rel="noopener noreferrer"
-        className="underline"
+        className="underline underline-offset-2"
       >
         Github
       </a>
