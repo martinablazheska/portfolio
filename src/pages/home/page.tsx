@@ -7,23 +7,21 @@ import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Testimonials from "@/components/Testimonials";
 import About from "@/components/About";
-import Footer from "@/components/Footer";
-import ScrollUpButton from "@/components/ScrollUpButton";
 
 const HomePage: React.FC = () => {
   return (
-    <div className="w-full flex flex-col gap-20">
+    <>
       <Navigation />
-      <Hero />
-      <Skills />
-      <Technologies />
-      <Projects />
-      <Experience />
-      <Testimonials />
-      <About />
-      <Footer />
-      <ScrollUpButton />
-    </div>
+      <div className="w-11/12 min-w-72 max-w-[1200px] p-2 md:p-4 mx-auto flex flex-col gap-20">
+        <Hero />
+        <Skills />
+        <Technologies />
+        <Projects />
+        <Experience />
+        <Testimonials />
+        <About />
+      </div>
+    </>
   );
 };
 

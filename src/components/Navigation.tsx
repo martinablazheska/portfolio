@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useWindowScroll } from "@uidotdev/usehooks";
 import useDebounce from "@/hooks/useDebounce";
-import {
-  Drawer,
-  DrawerContent,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  useDisclosure,
-} from "@nextui-org/react";
-import { Button } from "@nextui-org/button";
 import NavigationButton from "@/components/NavigationButton";
 import { MenuIcon, X as XIcon } from "lucide-react";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 
 const navigationItems = [
   "Home",
@@ -49,8 +50,6 @@ const Navigation: React.FC = () => {
     }
   }
 
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
-
   return (
     <>
       <div
@@ -69,38 +68,53 @@ const Navigation: React.FC = () => {
           />
         ))}
       </div>
-      <div className="lg:hidden flex sticky top-0 z-10 p-4 items-center">
-        <Button isIconOnly onPress={onOpen}>
-          <MenuIcon />
-        </Button>
-        <Drawer
-          isOpen={isOpen}
-          onOpenChange={onOpenChange}
-          placement="left"
-          backdrop="blur"
-        >
-          <DrawerContent>
-            {onClose => (
-              <>
-                <DrawerHeader className="flex w-full justify-end items-center">
-                  <XIcon onClick={onClose} />
-                </DrawerHeader>
-                <DrawerBody>
-                  {navigationItems.map(item => (
-                    <Button
-                      key={item}
-                      onPress={() => {
-                        scrollToElement(item);
-                        onClose();
-                      }}
-                    >
-                      {item}
-                    </Button>
-                  ))}
-                </DrawerBody>
-                <DrawerFooter></DrawerFooter>
-              </>
-            )}
+      <div className="w-full lg:hidden bg-veryDarkBlue px-4 py-2 sticky top-0 z-10">
+        <Drawer direction="left">
+          <DrawerTrigger>
+            <MenuIcon />
+          </DrawerTrigger>
+          <DrawerContent className="h-screen w-[85vw] rounded-l-lg bg-veryDarkBlue border-none flex flex-col text-white px-4 py-2">
+            <DrawerHeader className="w-full flex justify-between px-0">
+              <DrawerTitle>Menu</DrawerTitle>
+              <DrawerClose>
+                <XIcon />
+              </DrawerClose>
+            </DrawerHeader>
+            <DrawerDescription className="flex flex-col flex-grow justify-center gap-2 text-white">
+              {navigationItems.map(item => (
+                <DrawerClose
+                  key={item}
+                  onClick={() => {
+                    scrollToElement(item);
+                  }}
+                  className="text-start"
+                >
+                  <span className="font-mono text-lg">
+                    {item.toLowerCase()}
+                  </span>
+                </DrawerClose>
+              ))}
+            </DrawerDescription>
+            <DrawerFooter className="border-t border-t-slate-300 pt-4 px-0">
+              <span>Martina Blazheska</span>
+              <span>blazheska.martina@gmail.com</span>
+              <a
+                href="https://linkedin.com/in/martina-blazheska"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://github.com/martinablazheska"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline underline-offset-2"
+              >
+                Github
+              </a>
+            </DrawerFooter>
           </DrawerContent>
         </Drawer>
       </div>
