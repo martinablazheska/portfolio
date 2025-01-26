@@ -10,6 +10,7 @@ import {
   DrawerDescription,
   DrawerFooter,
   DrawerHeader,
+  DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
 
@@ -73,7 +74,8 @@ const Navigation: React.FC = () => {
             <MenuIcon />
           </DrawerTrigger>
           <DrawerContent className="h-screen w-[85vw] rounded-l-lg bg-veryDarkBlue border-none flex flex-col text-white px-4 py-2">
-            <DrawerHeader className="w-full flex justify-end px-0">
+            <DrawerHeader className="w-full flex justify-between px-0">
+              <DrawerTitle>Menu</DrawerTitle>
               <DrawerClose>
                 <XIcon />
               </DrawerClose>
