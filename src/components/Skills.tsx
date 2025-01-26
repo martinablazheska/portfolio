@@ -1,6 +1,5 @@
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import SkillCard from "@/components/SkillCard";
-
 import {
   Carousel,
   CarouselContent,

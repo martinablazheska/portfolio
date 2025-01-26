@@ -15,6 +15,14 @@ export type Technology = {
 
 export type Project = {
   name: string;
+  description: string;
+  challenge: string | string[];
+  solution: string | string[];
+  technologies: string[];
+  skills: string[];
+  repository?: string;
+  deployment?: string;
+  images?: string[];
 };
 
 export type Experience = {

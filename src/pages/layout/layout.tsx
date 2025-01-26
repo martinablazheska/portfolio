@@ -1,13 +1,10 @@
-import { Outlet } from "react-router-dom";
-import MusicButton from "@/components/MusicButton";
-import ScrollUpButton from "@/components/ScrollUpButton";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 
 const Layout: React.FC = () => {
   return (
     <div className="text-white text-poppins w-full h-min-screen">
       <Outlet />
-      <MusicButton />
-      <ScrollUpButton />
+      <ScrollRestoration />
     </div>
   );
 };

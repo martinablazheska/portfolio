@@ -1,17 +1,27 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "@/pages/home/page";
 import Layout from "@/pages/layout/layout";
+import HomePage from "@/pages/home/page";
+import ProjectPage from "@/pages/project/page";
+import MusicButton from "@/components/MusicButton";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
-    children: [{ index: true, element: <HomePage /> }],
+    children: [
+      { index: true, element: <HomePage /> },
+      { element: <ProjectPage />, path: "/project/:projectId" },
+    ],
   },
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+      <MusicButton />
+    </>
+  );
 }
 
 export default App;
