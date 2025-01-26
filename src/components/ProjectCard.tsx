@@ -5,7 +5,7 @@ type ProjectCardProps = Project & {
   id: number;
 };
 
-const MAX_DESCRIPTION_LENGTH = 100;
+const MAX_DESCRIPTION_LENGTH = 110;
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   name,
@@ -23,11 +23,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       to={`/project/${id}`}
       className="w-full h-full display flex flex-col gap-4"
     >
-      <div className="group relative w-full h-48">
+      <div className="group relative w-full h-56">
         <img
           src={images[0]}
           alt={`${name} cover image`}
-          className="w-full h-full object-cover group-hover:opacity-85 rounded-lg transition-opacity duration-300 ease-out"
+          className="w-full h-full object-cover rounded-lg transition-transform duration-300 ease-out group-hover:-translate-y-2"
         />
       </div>
       <h3 className="font-bold text-lg tracking-wider border-b border-b-white pb-2">

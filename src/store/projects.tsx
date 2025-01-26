@@ -1,6 +1,5 @@
 export const projects = [
   {
-    id: 1,
     name: "Code Dojo",
     description:
       "Code Dojo is a real-time collaborative coding platform where users can create and join coding rooms. It supports multiple programming languages and provides features like live code editing, code execution, and room management.",
@@ -43,6 +42,55 @@ export const projects = [
       "/public/projects/code-dojo/create-room.png",
       "/public/projects/code-dojo/join-room.png",
       "/public/projects/code-dojo/execute-code.png",
+    ],
+  },
+  {
+    name: "Promovere",
+    description:
+      "Promovere Garment Configurator is a platform that allows users to customize garments by selecting colors and decorations, with a 3D preview feature. It includes role-based access control, advanced search capabilities, and a responsive design to ensure a smooth experience across devices. The platform balances complex functionality with user-friendly features.",
+    challenge: [
+      "Improve an existing application with features like infinite scroll and filtering for a large product catalog.",
+      "Set up MeiliSearch to handle a wide range of filters efficiently.",
+      "Implement role-based authentication using Keycloak, integrated with Strapi and NextAuth.",
+      "Extend Strapi's users & permissions plugin to meet specific business needs.",
+      "Ensure robust error handling on both the frontend and backend.",
+      "Optimize the app for better performance and speed.",
+    ],
+    solution: [
+      "Enhanced the existing Next.js frontend with Tailwind CSS for responsiveness.",
+      "Added infinite scroll and configured MeiliSearch for fast, flexible filtering.",
+      "Integrated Keycloak with Strapi and NextAuth for secure and complex authentication.",
+      "Overrode and extended Strapi's users & permissions plugin to support custom requirements.",
+      "Implemented detailed error handling across the frontend and backend for better reliability.",
+      "Optimized performance by addressing key bottlenecks and improving scalability.",
+    ],
+    technologies: [
+      "TypeScript",
+      "Next.js",
+      "TailwindCSS",
+      "Node.js",
+      "meilisearch",
+      "Strapi",
+      "Apollo GraphQL",
+      "Keycloak",
+    ],
+    skills: [
+      "Frontend Architecture",
+      "UI/UX & Responsiveness",
+      "React Optimization",
+      "Backend Development",
+      "Strapi Customization",
+      "Authentication & Authorization",
+      "Git & Version Control",
+    ],
+    deployment: "https://promovere-web.vercel.app/",
+    images: [
+      "/public/projects/promovere/product-details-page.png",
+      "/public/projects/promovere/browse-garments.png",
+      "/public/projects/promovere/dashboard.png",
+      "/public/projects/promovere/company-profile.png",
+      "/public/projects/promovere/invite-user.png",
+      "/public/projects/promovere/user-profile.png",
     ],
   },
 ];

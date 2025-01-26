@@ -1,7 +1,6 @@
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import { Accordion, AccordionItem } from "@nextui-org/accordion";
 import { experiences } from "@/store/experiences";
-import { ChevronDown, ChevronLeft } from "lucide-react";
 
 const Experience = () => {
   return (
