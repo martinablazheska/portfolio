@@ -1,13 +1,59 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import TechnologyTooltip from "@/components/TechnologyTooltip";
 import { technologies } from "@/store/technologies";
 import { Technology } from "@/types/types";
 
 const Technologies = () => {
-  const [activeTechnology, setActiveTechnology] = useState<Technology>(
-    technologies[0]
-  );
+  const [activeTechnology, setActiveTechnology] = useState(technologies[0]);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleTooltipClick = (newTechnology: Technology) => {
+    // Only proceed if clicking a different technology
+    if (activeTechnology === newTechnology) {
+      return;
+    }
+
+    if (!containerRef.current) return;
+
+    // Store positions before the change
+    const elements = containerRef.current.children;
+    const oldPositions = Array.from(elements).map(el => {
+      const rect = el.getBoundingClientRect();
+      return {
+        left: rect.left,
+        top: rect.top,
+      };
+    });
+
+    // Update state to the new technology
+    setActiveTechnology(newTechnology);
+
+    // After state update, apply FLIP
+    requestAnimationFrame(() => {
+      Array.from(elements).forEach((element, i) => {
+        const newRect = element.getBoundingClientRect();
+        const oldPosition = oldPositions[i];
+
+        const deltaX = oldPosition.left - newRect.left;
+        const deltaY = oldPosition.top - newRect.top;
+
+        // Cast element to HTMLElement to access style property
+        const htmlElement = element as HTMLElement;
+
+        // Only animate if the element actually moved
+        if (Math.abs(deltaX) > 0.1 || Math.abs(deltaY) > 0.1) {
+          htmlElement.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+          htmlElement.style.transition = "none";
+
+          requestAnimationFrame(() => {
+            htmlElement.style.transition = "transform 500ms ease-out";
+            htmlElement.style.transform = "translate(0, 0)";
+          });
+        }
+      });
+    });
+  };
 
   return (
     <SectionWrapper id="Technologies" className="flex flex-col items-center">
@@ -15,16 +61,27 @@ const Technologies = () => {
         Technologies
       </h2>
       <div className="w-full flex flex-col md:flex-row items-center md:items-start justify-center p-4 gap-2 ">
-        <div className="w-full md:w-1/2 max-w-96 h-full flex flex-wrap gap-2 justify-evenly md:justify-start">
+        <div
+          ref={containerRef}
+          className="w-full md:w-1/2 max-w-96 h-full flex flex-wrap gap-2 justify-evenly md:justify-start"
+        >
           {technologies.map((technology, index) => (
-            <TechnologyTooltip
+            <div
               key={index}
-              {...technology}
-              onClick={() => setActiveTechnology(technology)}
-              isActive={activeTechnology === technology}
-            />
+              className="will-change-transform"
+              style={{
+                transition: "transform 300ms ease-out",
+              }}
+            >
+              <TechnologyTooltip
+                {...technology}
+                onClick={() => handleTooltipClick(technology)}
+                isActive={activeTechnology === technology}
+              />
+            </div>
           ))}
         </div>
+
         <div className="w-full md:w-1/2 max-w-96 h-full flex flex-col gap-4 p-4">
           <div className="font-semibold text-lg md:text-2xl tracking-wider border-b-2 border-gray-400">
             {activeTechnology.title}

@@ -65,7 +65,11 @@ const TechnologyTooltip: React.FC<TechnologyTooltipProps> = ({
       <span className="w-12 h-12 flex items-center justify-center text-xl">
         {icon}
       </span>
-      <div className="flex flex-col items-start justify-center ${isActive ? 'pr-4' : ''} gap-1">
+      <div
+        className={`flex flex-col items-start justify-center ${
+          isActive ? "pr-4" : ""
+        } gap-1`}
+      >
         <span
           className={`transition-all duration-500 ${
             isActive ? "text-sm" : "text-[0px]"
@@ -80,7 +84,7 @@ const TechnologyTooltip: React.FC<TechnologyTooltipProps> = ({
         >
           <span className="absolute top-0 left-0 w-full bg-veryDarkBlue rounded-full transition-all h-full" />
           <span
-            className={`absolute top-0 left-0 bg-gradient-to-r from-pink-500 to-darkYellow rounded-full transition-all h-full`}
+            className="absolute top-0 left-0 bg-gradient-to-r from-pink-500 to-darkYellow rounded-full transition-all h-full"
             style={{ width: `${progress}%` }}
           />
         </div>
