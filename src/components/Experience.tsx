@@ -1,4 +1,5 @@
 import SectionWrapper from "@/components/ui/SectionWrapper";
+import SectionHeading from "@/components/ui/SectionHeading";
 import { Accordion, AccordionItem } from "@nextui-org/accordion";
 import { experiences } from "@/store/experiences";
 
@@ -8,9 +9,7 @@ const Experience = () => {
       id="Experience"
       className="flex flex-col items-center justify-center"
     >
-      <h2 className="text-sm md:text-xl lg:text-2xl font-bold tracking-[0.25em] text-center mb-4 md:mb-10">
-        Experience
-      </h2>
+      <SectionHeading heading="Experience" />
       <div className="w-full px-4 md:w-2/3">
         <Accordion
           itemClasses={{

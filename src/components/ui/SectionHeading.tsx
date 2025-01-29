@@ -8,7 +8,7 @@ const SectionHeading: React.FC<{ heading: string; className?: string }> = ({
   return (
     <h2
       className={cn(
-        "text-sm md:text-xl lg:text-2xl font-bold tracking-[0.25em] text-center mb-4 md:mb-10",
+        "text-lg md:text-xl lg:text-2xl font-bold tracking-[0.25em] text-center mb-4 md:mb-10",
         className
       )}
     >

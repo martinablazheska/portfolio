@@ -1,7 +1,7 @@
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import SectionHeading from "@/components/ui/SectionHeading";
+import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/store/projects";
-import ProjectCard from "./ProjectCard";
 
 const Projects = () => {
   return (

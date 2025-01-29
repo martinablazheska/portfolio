@@ -1,4 +1,5 @@
 import SectionWrapper from "@/components/ui/SectionWrapper";
+import SectionHeading from "@/components/ui/SectionHeading";
 import SkillCard from "@/components/SkillCard";
 import {
   Carousel,
@@ -16,9 +17,7 @@ const Skills = () => {
       id="Skills"
       className="flex flex-col md:justify-evenly items-center"
     >
-      <h2 className="text-sm md:text-xl lg:text-2xl font-bold tracking-[0.25em] text-center mb-4 md:mb-10">
-        Skills{" "}
-      </h2>
+      <SectionHeading heading="Skills" />
       {/* <div className="w-full grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-4 px-4">
         {skills.map((skill, index) => (
           <SkillCard {...skill} key={index} />

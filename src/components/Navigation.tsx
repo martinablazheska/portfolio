@@ -73,7 +73,7 @@ const Navigation: React.FC = () => {
           <DrawerTrigger>
             <MenuIcon />
           </DrawerTrigger>
-          <DrawerContent className="h-screen w-[85vw] rounded-l-lg bg-veryDarkBlue border-none flex flex-col text-white px-4 py-2">
+          <DrawerContent className="h-screen w-[85vw] rounded-l-lg bg-veryDarkBlue border-none flex flex-col text-white px-4 py-2 overflow-y-auto">
             <DrawerHeader className="w-full flex justify-between px-0">
               <DrawerTitle>Menu</DrawerTitle>
               <DrawerClose>
@@ -82,17 +82,19 @@ const Navigation: React.FC = () => {
             </DrawerHeader>
             <DrawerDescription className="flex flex-col flex-grow justify-center gap-2 text-white">
               {navigationItems.map(item => (
-                <DrawerClose
+                <div
                   key={item}
                   onClick={() => {
                     scrollToElement(item);
                   }}
                   className="text-start"
                 >
-                  <span className="font-mono text-lg">
-                    {item.toLowerCase()}
-                  </span>
-                </DrawerClose>
+                  <DrawerClose>
+                    <span className="font-mono text-lg">
+                      {item.toLowerCase()}
+                    </span>
+                  </DrawerClose>
+                </div>
               ))}
             </DrawerDescription>
             <DrawerFooter className="border-t border-t-slate-300 pt-4 px-0">

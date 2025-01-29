@@ -9,7 +9,6 @@ import { Button } from "@nextui-org/button";
 import ContactButton from "@/components/ContactButton";
 import { Github, MousePointerClick, ChevronRight } from "lucide-react";
 import { Project } from "@/types/types";
-import { skills } from "@/store/skills";
 import { projects } from "@/store/projects";
 import { technologies } from "@/store/technologies";
 
@@ -19,10 +18,6 @@ const ProjectPage = () => {
 
   const projectTechnologies = technologies.filter(technology =>
     project.technologies.includes(technology.title)
-  );
-
-  const projectSkills = skills.filter(skill =>
-    project.skills.includes(skill.title)
   );
 
   return (
@@ -136,23 +131,16 @@ const ProjectPage = () => {
             </p>
           )}
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 justify-center md:justify-start my-3">
           {projectTechnologies.map((technology, index) => (
             <div
               key={index}
-              className="flex items-center gap-2 rounded-full bg-white bg-opacity-10 py-2 px-3 hover:bg-transparent transition-all duration-400"
+              className="flex items-center gap-2 rounded-full bg-white bg-opacity-10 p-2 md:px-3 hover:bg-transparent transition-all duration-400"
             >
               <span>{technology.icon}</span>
-              <span className="text-xs">{technology.title}</span>
-            </div>
-          ))}
-          {projectSkills.map((skill, index) => (
-            <div
-              key={index}
-              className="flex items-center gap-2 rounded-full bg-white bg-opacity-10 py-2 px-3 hover:bg-transparent transition-all duration-400"
-            >
-              <span className="scale-[0.6]">{skill.icon}</span>
-              <span className="text-xs">{skill.title}</span>
+              <span className="hidden md:inline text-xs">
+                {technology.title}
+              </span>
             </div>
           ))}
         </div>
