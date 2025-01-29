@@ -31,10 +31,10 @@ const Experience = () => {
               aria-label={`${experience.position} @ ${experience.company}`}
             >
               <div className="flex flex-col w-full gap-3 p-4">
-                <div className="font-mono text-xs md:text-sm text-justify border-b-2 border-gray-400 py-2">
+                <div className="font-mono text-xs md:text-sm text-justify ">
                   {experience.description}
                 </div>
-                <div className="w-full flex gap-2 flex-wrap">
+                <div className="w-full hidden md:flex gap-2 flex-wrap border-t-2 border-gray-400 py-2">
                   {experience.skills.map(skill => (
                     <span
                       key={skill}

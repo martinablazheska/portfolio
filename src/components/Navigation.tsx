@@ -40,13 +40,30 @@ const Navigation: React.FC = () => {
     const element = document.getElementById(id);
     if (element) {
       const offset = id === "Home" ? 0 : 100;
-      const elementPosition = element.offsetTop;
-      const scrollPosition = elementPosition - offset;
 
-      window.scrollTo({
-        top: scrollPosition,
-        behavior: "smooth",
-      });
+      // Try both methods for better cross-browser compatibility
+      try {
+        // Method 1: window.scrollTo
+        const elementPosition = element.offsetTop;
+        const scrollPosition = elementPosition - offset;
+        window.scrollTo({
+          top: scrollPosition,
+          behavior: "smooth",
+        });
+      } catch (e) {
+        // Method 2: scrollIntoView as fallback
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+
+        // Add a small delay and then adjust for offset
+        if (offset) {
+          setTimeout(() => {
+            window.scrollBy(0, -offset);
+          }, 100);
+        }
+      }
     }
   }
 
@@ -90,14 +107,14 @@ const Navigation: React.FC = () => {
                   className="text-start"
                 >
                   <DrawerClose>
-                    <span className="font-mono text-lg">
+                    <span className="font-mono text-sm md:text-lg">
                       {item.toLowerCase()}
                     </span>
                   </DrawerClose>
                 </div>
               ))}
             </DrawerDescription>
-            <DrawerFooter className="border-t border-t-slate-300 pt-4 px-0">
+            <DrawerFooter className="border-t border-t-slate-300 pt-4 px-0 text-sm md:text-base">
               <span>Martina Blazheska</span>
               <span>blazheska.martina@gmail.com</span>
               <a
