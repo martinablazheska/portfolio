@@ -8,7 +8,6 @@ import {
   DrawerClose,
   DrawerContent,
   DrawerDescription,
-  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
@@ -40,30 +39,14 @@ const Navigation: React.FC = () => {
     const element = document.getElementById(id);
     if (element) {
       const offset = id === "Home" ? 0 : 100;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - offset;
 
-      // Try both methods for better cross-browser compatibility
-      try {
-        // Method 1: window.scrollTo
-        const elementPosition = element.offsetTop;
-        const scrollPosition = elementPosition - offset;
-        window.scrollTo({
-          top: scrollPosition,
-          behavior: "smooth",
-        });
-      } catch (e) {
-        // Method 2: scrollIntoView as fallback
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-
-        // Add a small delay and then adjust for offset
-        if (offset) {
-          setTimeout(() => {
-            window.scrollBy(0, -offset);
-          }, 100);
-        }
-      }
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
   }
 
@@ -102,7 +85,9 @@ const Navigation: React.FC = () => {
                 <div
                   key={item}
                   onClick={() => {
-                    scrollToElement(item);
+                    setTimeout(() => {
+                      scrollToElement(item);
+                    }, 100); // Small delay to allow drawer to start closing
                   }}
                   className="text-start"
                 >
@@ -114,26 +99,6 @@ const Navigation: React.FC = () => {
                 </div>
               ))}
             </DrawerDescription>
-            <DrawerFooter className="border-t border-t-slate-300 pt-4 px-0 text-sm md:text-base">
-              <span>Martina Blazheska</span>
-              <span>blazheska.martina@gmail.com</span>
-              <a
-                href="https://linkedin.com/in/martina-blazheska"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline underline-offset-2"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="https://github.com/martinablazheska"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline underline-offset-2"
-              >
-                Github
-              </a>
-            </DrawerFooter>
           </DrawerContent>
         </Drawer>
       </div>

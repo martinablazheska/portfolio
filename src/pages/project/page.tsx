@@ -5,7 +5,6 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { Button } from "@nextui-org/button";
 import ContactButton from "@/components/ContactButton";
 import { Github, MousePointerClick, ChevronRight } from "lucide-react";
 import { Project } from "@/types/types";
@@ -32,14 +31,12 @@ const ProjectPage = () => {
       </header>
       <div className="w-full flex justify-between items-center">
         <div className="flex items-center gap-1 text-[10px] md:text-sm">
-          <Button className="p-0">
-            <Link
-              to={"/"}
-              className="underline underline-offset-2 md:underline-offset-4 font-light"
-            >
-              Home
-            </Link>
-          </Button>
+          <Link
+            to={"/"}
+            className="underline underline-offset-2 md:underline-offset-4 font-light"
+          >
+            Home
+          </Link>
           <span className="scale-[0.6] md:scale-1">
             <ChevronRight size={15} />
           </span>
